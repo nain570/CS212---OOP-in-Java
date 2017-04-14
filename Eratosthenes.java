@@ -22,7 +22,7 @@ public class PrimeGenerator { //a class of different methods to print Prime Numb
     }
     
     public void eratosthenes(){ //ERATOSTHENES method of printing Prime Numebers
-        boolean[] primeList = new boolean[limit]; //boolean array of 1000 elements
+        boolean[] primeList = new boolean[limit]; //boolean array of said elements
         Arrays.fill(primeList, true); //initializing all true
         
         for(int i = 2; i < primeList.length ; ++i){
