@@ -17,7 +17,7 @@ public class Reverse {
         //getting new line as StringBuilder
         StringBuilder message = new StringBuilder( input.nextLine() );
         
-        //Logic: Use character-to-integer conversion and swap the integers using arithmetic swapping.
+        //Logic: Use character-as-integer arithmetic and swap the characters using addition and subtraction.
         //This will not require any new variable.
         //x = x + y
         //y = x - y
