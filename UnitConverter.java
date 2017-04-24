@@ -1,9 +1,8 @@
-package taskone;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Converter implements ActionListener {
+public class UnitConverter implements ActionListener {
     JFrame converterFrame;
     JPanel converterPanel;
     JTextField input;
@@ -95,6 +94,6 @@ public class Converter implements ActionListener {
     public static void main(String[] args) {
         //Make sure we have nice window decorations.
         JFrame.setDefaultLookAndFeelDecorated(true);
-        Converter converter = new Converter();
+        UnitConverter converter = new UnitConverter();
     }
 }
