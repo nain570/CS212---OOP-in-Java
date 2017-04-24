@@ -2,12 +2,13 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class UnitConverter implements ActionListener {
+public class Converter implements ActionListener {
     JFrame converterFrame;
     JPanel converterPanel;
     JTextField input;
     JLabel fromLabel, toLabel, selection;
     JButton convertTemp;
+    JComboBox source;
     
     public Converter() {
         //Create and set up the window.
@@ -37,7 +38,7 @@ public class UnitConverter implements ActionListener {
                                 "Radians to Degrees", 
                                 "Meters to Feet" };
         JComboBox convoList = new JComboBox(conversions);
-        convoList.addActionListener(this);
+    
         selection = new JLabel("Select conversion here: ", SwingConstants.LEFT);
         
         input = new JTextField(2);
@@ -56,44 +57,49 @@ public class UnitConverter implements ActionListener {
         converterPanel.add(toLabel);
         fromLabel.setBorder(BorderFactory.createEmptyBorder(5,5,5,5));
         toLabel.setBorder(BorderFactory.createEmptyBorder(5,5,5,5));
+        convoList.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                //getting selcted converstion
+                source = (JComboBox)event.getSource();
+                String name = (String)source.getSelectedItem();
+                String[] segments1 = name.split(" to ");
+                //changing labels
+                fromLabel.setText(segments1[0]);
+                toLabel.setText(segments1[1]);
+            }
+        });
     }
     @Override
     public void actionPerformed(ActionEvent event) {
-        //getting selcted converstion
-        JComboBox source = (JComboBox)event.getSource();
-        String name = (String)source.getSelectedItem();
-        String[] segments = name.split(" to ");
-        //changing labels
-        fromLabel.setText(segments[0]);
-        toLabel.setText(segments[1]); 
-       
         double answer = 0.0; //converted answer
-        
-        switch( source.getSelectedIndex() ){
-            case 0: //celsius to fahrenheit
-                answer = Double.parseDouble( input.getText() ) * 1.8 + 32;
-                break;
-            case 1: //celsius to kelvin
-                answer = Double.parseDouble( input.getText() ) + 273.15;
-                break;
-            case 2: //kilograms to pound
-                answer = Double.parseDouble( input.getText() ) * 2.20462;
-                break;
-            case 3: //radians to degree
-                answer = Double.parseDouble( input.getText() ) * 180 / Math.PI;
-                break;
-            case 4: //meters to feet
-                answer = Double.parseDouble( input.getText() ) * 3.28084;
-                break;
+        if(event.getSource() == convertTemp){
+            switch( source.getSelectedIndex() ){
+                case 0: //celsius to fahrenheit
+                    answer = Double.parseDouble( input.getText() ) * 1.8 + 32;
+                    break;
+                case 1: //celsius to kelvin
+                    answer = Double.parseDouble( input.getText() ) + 273.15;
+                    break;
+                case 2: //kilograms to pound
+                    answer = Double.parseDouble( input.getText() ) * 2.20462;
+                    break;
+                case 3: //radians to degree
+                    answer = Double.parseDouble( input.getText() ) * 180 / Math.PI;
+                    break;
+                case 4: //meters to feet
+                    answer = Double.parseDouble( input.getText() ) * 3.28084;
+                    break;
+            }
         }
         //updating label with answer
-        toLabel.setText ( answer + " " +segments[1]);  	
+        toLabel.setText ( answer + " " + toLabel.getText() );  	
     }
     
     		
     public static void main(String[] args) {
         //Make sure we have nice window decorations.
         JFrame.setDefaultLookAndFeelDecorated(true);
-        UnitConverter converter = new UnitConverter();
+        Converter converter = new Converter();
     }
 }
