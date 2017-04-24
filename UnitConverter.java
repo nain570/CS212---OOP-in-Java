@@ -10,7 +10,7 @@ public class UnitConverter implements ActionListener {
     JButton convertTemp;
     JComboBox source;
     
-    public Converter() {
+    public UnitConverter() {
         //Create and set up the window.
         converterFrame = new JFrame("Conversion");
         converterFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
