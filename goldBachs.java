@@ -1,4 +1,4 @@
-package goldBachs;
+//Solution of Goldbach's Conjecture problem
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -9,7 +9,7 @@ public class goldBachs {
     //array lists for prime numbers and their pairs
     private List<Integer> primes = new ArrayList<Integer>();
     private List<List<Integer>> pairs = new ArrayList<List<Integer>>(); //to make "pairs"
-    private int number; //number to apply Gold Bachs Problem on
+    private int number; //number to apply GoldBach's Problem on
     
     //constructor
     public goldBachs(int number){
@@ -46,7 +46,7 @@ public class goldBachs {
             }		
         }
     }
-    /* Method to display GoldBach's Conjucture */
+    /* Method to display GoldBach's Conjecture */
     public void display(){
         System.out.printf("GoldBachs Conjecture for number %d: \n", this.number);
         for(int i = 0; i < pairs.size(); i++){ //each row in pair list
