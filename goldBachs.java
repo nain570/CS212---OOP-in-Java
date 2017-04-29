@@ -15,11 +15,15 @@ public class goldBachs {
     public goldBachs(int number){
         this.number = number;
     }
+    //default
+    public goldBach(){
+        this.number = 50;
+    }
     
     // CALL THIS METHOD TO BEGIN OPERATION
     public void initiate(){
         getPrimes();
-        findingPairs();
+        findPairs();
         display();
     }
     
@@ -35,7 +39,7 @@ public class goldBachs {
         }
     }
     // Main Logic of the Whole program, solution to the problem
-    private void findingPairs(){
+    private void findPairs(){
         for(int i = 0; i < primes.size() ; i++){
             for(int j = 0; j < primes.size(); j++){
                 //these variables don't require to call .get() function over and again, also improve readability
