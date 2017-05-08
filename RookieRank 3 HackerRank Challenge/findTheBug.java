@@ -5,7 +5,7 @@ import java.math.*;
 import java.util.regex.*;
 
 public class Solution {
-
+    // FUNCTION TO IMPLEMENT
     static int[] findTheBug(String[] grid){
         int[] posi = new int[2];
         for(int i = 0; i < grid.length; i++){
