@@ -1,9 +1,9 @@
 package goldBachs;
 
-public class GoldBachsTest {
+public class GoldbachsTest {
     public static void main(String args[]){
-        goldBachs obj = new goldBachs(50);
-        goldBachs obj2 = new goldBachs(22);
+        Goldbachs obj = new Goldbachs(50);
+        Goldbachs obj2 = new Goldbachs(22);
         //start operation
         obj.initiate();
         obj2.initiate();
