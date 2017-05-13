@@ -8,7 +8,7 @@ public class Player {
         this.name = "Alex";
     }
 		
-		//another constructor
+	//another constructor
     public Player(String name){
         setName(name);
     }
