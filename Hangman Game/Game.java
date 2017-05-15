@@ -1,6 +1,5 @@
 /* A game class, can be modified in many. I made it very very simple for time being, and
    for the sake of OOP structure. It doesn't do much! */
-package hangmangame;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
