@@ -1,4 +1,3 @@
-package hangmangame;
 import javax.swing.*;
 
 /**
