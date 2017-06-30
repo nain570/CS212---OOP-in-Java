@@ -6,7 +6,7 @@ public class NumberPlateRegex {
     
     public static void main( String args[] ){
         
-        String REGEX = "^[a-zA-z]{1,4}\\s*[-]*[0-9]{3,4}"; //regular expression
+        String REGEX = "^[a-zA-z]{1,4}\\s[-]*.*[0-9]{0,2}\\s[-]*.*[0-9]{3,4}"; //regular expression
         String numbers[] = {"N864 152", "AB05 CD", "APF--5452", "ABC123", "EKD 182", "ABC 123", "ABC 1234", "ABC1234", "he12467", "b13486894", "345abc", "sfa13saf", "_09313_alk", "2jlk0a", "jajlk 02", "1234 ABC", "abcde 1234"};
         
         Pattern pattern; //a pattern of compiled regex
