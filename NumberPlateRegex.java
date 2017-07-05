@@ -14,7 +14,7 @@ public class NumberPlateRegex {
 
         for(String number : numbers){ //for every number
             //fixing
-            Pattern p = Pattern.compile("ICT|Islamabad|Sindh|Punjab");
+            Pattern p = Pattern.compile("ICT|Islamabad|Sindh|Punjab|Govt of Sindh|ICT-Islamabad");
             Matcher m = p.matcher(  number );
             number = m.replaceAll("");
             
